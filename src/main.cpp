@@ -6,24 +6,17 @@
 /*   By: corellan <corellan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 12:45:49 by corellan          #+#    #+#             */
-/*   Updated: 2023/08/02 14:17:06 by corellan         ###   ########.fr       */
+/*   Updated: 2023/08/02 14:33:34 by corellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Database.hpp"
 
-int	main(int ac, char **av)
+int	main()
 {
 	std::ifstream	file;
 	Database		database;
 
-	if (!av[0])
-		return (1);
-	if (ac != 1)
-	{
-		std::cerr << "Error: No parameters allowed." << std::endl;
-		return (1);
-	}
 	file.open("words.txt");
 	if (file.fail() == true)
 	{

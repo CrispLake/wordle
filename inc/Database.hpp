@@ -6,7 +6,7 @@
 /*   By: corellan <corellan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 12:28:43 by corellan          #+#    #+#             */
-/*   Updated: 2023/08/02 14:10:02 by corellan         ###   ########.fr       */
+/*   Updated: 2023/08/02 14:34:01 by corellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,13 @@ private:
 
 public:
 
-	Database(void);
-	~Database(void);
+	Database();
+	~Database();
 
 	int			storeDatabase(std::ifstream &file);
-	void		printDatabase(void); //FOR DEBUGGING
+	void		printDatabase(); //FOR DEBUGGING
 	bool		isInDatabase(std::string const &user);
-	std::string	returnWord(void);
+	std::string	returnWord();
 
 };
 
