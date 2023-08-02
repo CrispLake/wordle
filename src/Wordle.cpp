@@ -6,7 +6,7 @@
 /*   By: corellan <corellan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 13:03:18 by emajuri           #+#    #+#             */
-/*   Updated: 2023/08/02 17:10:34 by corellan         ###   ########.fr       */
+/*   Updated: 2023/08/02 17:22:40 by emajuri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	Wordle::start(Database *data) {
 
 	database = data;
 	correct = database->returnWord();
-	for (int i = 0; i < 5; i++) {
+	for (int i = 0; i < 6; i++) {
 		if (getWord(guess) == -1)
 			return (-1);
 		words[i] = guess;
@@ -52,7 +52,7 @@ int	Wordle::start(Database *data) {
 			std::cout << "Nice work!\n";
 			break;
 		}
-		else if (i == 4)
+		else if (i == 5)
 			std::cout << "The correct word was: " << correct << "\nTry again\n";
 	}
 	return (0);
@@ -110,12 +110,16 @@ void	Wordle::printColor(char c, int index, std::string word) {
 				count--;
 		if (count > 0)
 			std::cout << YEL;
+		else
+			std::cout << GRA;
 	}
+	else
+		std::cout << GRA;
 	std::cout << c << WHT;
 }
 
 void	Wordle::display() {
-	for (int i = 0; i < 5; i++) {
+	for (int i = 0; i < 6; i++) {
 		if (words[i].length() == 5) {
 			for (int j = 0; j < 5; j++) {
 				printColor(words[i][j], j, words[i]);
