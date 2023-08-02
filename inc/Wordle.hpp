@@ -6,7 +6,7 @@
 /*   By: emajuri <emajuri@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 12:59:31 by emajuri           #+#    #+#             */
-/*   Updated: 2023/08/02 16:57:02 by emajuri          ###   ########.fr       */
+/*   Updated: 2023/08/02 17:17:51 by emajuri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #define GRN "\e[0;32m"
 #define YEL "\e[0;33m"
 #define WHT "\e[0;37m"
+#define GRA "\e[38;5;243m"
 
 #include <string>
 #include "Database.hpp"

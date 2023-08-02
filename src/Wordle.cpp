@@ -6,7 +6,7 @@
 /*   By: emajuri <emajuri@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 13:03:18 by emajuri           #+#    #+#             */
-/*   Updated: 2023/08/02 16:59:49 by emajuri          ###   ########.fr       */
+/*   Updated: 2023/08/02 17:18:49 by emajuri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,11 @@ void	Wordle::printColor(char c, int index, std::string word) {
 				count--;
 		if (count > 0)
 			std::cout << YEL;
+		else
+			std::cout << GRA;
 	}
+	else
+		std::cout << GRA;
 	std::cout << c << WHT;
 }
 
