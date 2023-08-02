@@ -3,17 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: emajuri <emajuri@student.hive.fi>          +#+  +:+       +#+         #
+#    By: corellan <corellan@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/10 12:50:22 by emajuri           #+#    #+#              #
-#    Updated: 2023/08/02 12:14:56 by emajuri          ###   ########.fr        #
+#    Updated: 2023/08/02 13:30:52 by corellan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 NAME = wordle
 
-SRC = 
+SRC = main.cpp Database.cpp
 
 OBJ = $(addprefix obj/,$(SRC:%.cpp=%.o))
 
