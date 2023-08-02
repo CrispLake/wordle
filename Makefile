@@ -6,7 +6,7 @@
 #    By: emajuri <emajuri@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/10 12:50:22 by emajuri           #+#    #+#              #
-#    Updated: 2023/08/02 12:13:11 by emajuri          ###   ########.fr        #
+#    Updated: 2023/08/02 12:14:56 by emajuri          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ OBJ_DIR = ./obj
 
 #flags
 WWW = -Wall -Wextra -Werror
-FLAGS = $(WWW) -std=c++98 -I inc
+FLAGS = $(WWW) -I inc
 
 .PHONY: all clean fclean re
 
