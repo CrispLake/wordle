@@ -6,7 +6,7 @@
 /*   By: emajuri <emajuri@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 13:03:18 by emajuri           #+#    #+#             */
-/*   Updated: 2023/08/02 15:07:20 by emajuri          ###   ########.fr       */
+/*   Updated: 2023/08/02 15:38:16 by emajuri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 Wordle::Wordle() {
 }
 
-void	Wordle::start() {
+void	Wordle::start(Database *data) {
 	std::string guess;
 
 	std::cout << RED
@@ -41,7 +41,8 @@ void	Wordle::start() {
 	<< "     /___/                                                          \n"
 	<< WHT;
 
-
+	database = data;
+	correct = database->returnWord();
 	for (int i = 0; i < 6; i++) {
 		guess = getWord();
 		words[i] = guess;
