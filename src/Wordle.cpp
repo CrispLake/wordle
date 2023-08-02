@@ -6,7 +6,7 @@
 /*   By: emajuri <emajuri@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 13:03:18 by emajuri           #+#    #+#             */
-/*   Updated: 2023/08/02 15:38:16 by emajuri          ###   ########.fr       */
+/*   Updated: 2023/08/02 16:51:53 by emajuri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	Wordle::start(Database *data) {
 
 	database = data;
 	correct = database->returnWord();
-	for (int i = 0; i < 6; i++) {
+	for (int i = 0; i < 5; i++) {
 		guess = getWord();
 		words[i] = guess;
 		display();
@@ -51,8 +51,8 @@ void	Wordle::start(Database *data) {
 			std::cout << "Nice work!\n";
 			break;
 		}
-		else if (i == 5)
-			std::cout << "Try again\n";
+		else if (i == 4)
+			std::cout << "The correct word was: " << correct << "\nTry again\n";
 	}
 }
 
@@ -69,11 +69,28 @@ std::string	Wordle::getWord() {
 	return (word);
 }
 
+void	Wordle::printColor(char c, int index, std::string word) {
+	if (c == correct[index])
+		std::cout << GRN;
+	else if (correct.find(c) != std::string::npos) {
+		int	count = 0;
+		for (int i = 0; i < 5; i++)
+			if (correct[i] == c && correct[i] != word[i])
+				count++;
+		for (int i = 0; i < index; i++)
+			if (word[i] == c)
+				count--;
+		if (count > 0)
+			std::cout << YEL;
+	}
+	std::cout << c << WHT;
+}
+
 void	Wordle::display() {
 	for (int i = 0; i < 5; i++) {
 		if (words[i].length() == 5) {
 			for (int j = 0; j < 5; j++) {
-				printColor(words[i][j], j);
+				printColor(words[i][j], j, words[i]);
 				if (j < 4)
 					std::cout << " ";
 			}

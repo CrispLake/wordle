@@ -6,7 +6,7 @@
 /*   By: emajuri <emajuri@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 12:59:31 by emajuri           #+#    #+#             */
-/*   Updated: 2023/08/02 15:36:56 by emajuri          ###   ########.fr       */
+/*   Updated: 2023/08/02 16:35:51 by emajuri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ class Wordle {
 
 		void		display();
 		std::string	getWord();
-		void		printColor(char c, int index);
+		void		printColor(char c, int index, std::string word);
 };
 
 #endif
