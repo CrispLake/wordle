@@ -6,7 +6,7 @@
 /*   By: corellan <corellan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 12:28:43 by corellan          #+#    #+#             */
-/*   Updated: 2023/08/02 14:34:01 by corellan         ###   ########.fr       */
+/*   Updated: 2023/08/02 16:47:20 by corellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ private:
 	Database	&operator=(Database const &rhs);
 
 	int		_wordValidator(std::string const &input);
-	void	_capitalizer(std::string &input);
 
 public:
 
@@ -43,6 +42,7 @@ public:
 	void		printDatabase(); //FOR DEBUGGING
 	bool		isInDatabase(std::string const &user);
 	std::string	returnWord();
+	void		capitalizer(std::string &input);
 
 };
 
