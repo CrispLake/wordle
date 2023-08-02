@@ -6,11 +6,10 @@
 /*   By: corellan <corellan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 12:45:49 by corellan          #+#    #+#             */
-/*   Updated: 2023/08/02 14:42:40 by corellan         ###   ########.fr       */
+/*   Updated: 2023/08/02 14:54:52 by corellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Database.hpp"
 #include "Wordle.hpp"
 
 int	main()
@@ -27,11 +26,6 @@ int	main()
 	}
 	if (database.storeDatabase(file) == -1)
 		return (1);
-	std::cout << database.returnWord() << std::endl;
-	if (database.isInDatabase("ABBA") == true)
-		std::cout << "ZORRO" << std::endl;
-	else
-		std::cout << "VOI VITTU!!" << std::endl;
-	wordle.start();
+	wordle.start(&database);
 	return (0);
 }

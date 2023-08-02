@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Wordle.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emajuri <emajuri@student.hive.fi>          +#+  +:+       +#+        */
+/*   By: corellan <corellan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 12:59:31 by emajuri           #+#    #+#             */
-/*   Updated: 2023/08/02 13:47:01 by emajuri          ###   ########.fr       */
+/*   Updated: 2023/08/02 14:53:42 by corellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,19 @@
 #define WORDLE_HPP
 
 #include <string>
+#include "Database.hpp"
 
 class Wordle {
 	public:
 		Wordle();
 
-		void	start();
+		void	start(Database *data);
 
 	private:
 		std::string	words[6];
 		std::string	correct;
+		Database	*database;
+
 
 		void	display();
 		std::string	getWord();

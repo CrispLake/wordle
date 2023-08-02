@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Wordle.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emajuri <emajuri@student.hive.fi>          +#+  +:+       +#+        */
+/*   By: corellan <corellan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 13:03:18 by emajuri           #+#    #+#             */
-/*   Updated: 2023/08/02 13:53:40 by emajuri          ###   ########.fr       */
+/*   Updated: 2023/08/02 14:54:57 by corellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,11 @@
 Wordle::Wordle() {
 }
 
-void	Wordle::start() {
+void	Wordle::start(Database *data) {
 	std::string guess;
 
+	database = data;
+	correct = database->returnWord();
 	for (int i = 0; i < 6; i++) {
 		guess = getWord();
 		words[i] = guess;
