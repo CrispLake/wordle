@@ -6,7 +6,7 @@
 /*   By: emajuri <emajuri@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 12:59:31 by emajuri           #+#    #+#             */
-/*   Updated: 2023/08/02 16:35:51 by emajuri          ###   ########.fr       */
+/*   Updated: 2023/08/02 16:57:02 by emajuri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Wordle {
 	public:
 		Wordle();
 
-		void	start(Database *data);
+		int	start(Database *data);
 
 	private:
 		std::string	words[6];
@@ -33,8 +33,8 @@ class Wordle {
 		Database	*database;
 
 
-		void		display();
-		std::string	getWord();
+		void	display();
+		int		getWord(std::string &word);
 		void		printColor(char c, int index, std::string word);
 };
 

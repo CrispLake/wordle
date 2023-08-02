@@ -6,7 +6,7 @@
 /*   By: emajuri <emajuri@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 13:03:18 by emajuri           #+#    #+#             */
-/*   Updated: 2023/08/02 16:51:53 by emajuri          ###   ########.fr       */
+/*   Updated: 2023/08/02 16:59:49 by emajuri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 Wordle::Wordle() {
 }
 
-void	Wordle::start(Database *data) {
+int	Wordle::start(Database *data) {
 	std::string guess;
 
 	std::cout << RED
@@ -44,7 +44,8 @@ void	Wordle::start(Database *data) {
 	database = data;
 	correct = database->returnWord();
 	for (int i = 0; i < 5; i++) {
-		guess = getWord();
+		if (getWord(guess) == -1)
+			return (-1);
 		words[i] = guess;
 		display();
 		if (guess == correct) {
@@ -54,19 +55,46 @@ void	Wordle::start(Database *data) {
 		else if (i == 4)
 			std::cout << "The correct word was: " << correct << "\nTry again\n";
 	}
+	return (0);
 }
 
-std::string	Wordle::getWord() {
-	std::string	word;
-	std::getline(std::cin, word);
-	if (std::cin.eof())
-		; //throw
-	else if (word.length() != 5)
-		std::cout << "Invalid word\n";
-	for (int i = 0; i < 5; i++)
-		if (!std::isalpha(word.c_str()[i]))
-			; //throw
-	return (word);
+int	Wordle::getWord(std::string &word) {
+	int	flag;
+
+	while (1)
+	{
+		flag = 0;
+		std::getline(std::cin, word);
+		if (std::cin.eof())
+		{
+			std::cerr << "You chose to close the program. Good luck next time" << std::endl;
+			return (-1);
+		}
+		else if (word.length() != 5)
+		{
+			std::cerr << "Invalid word" << std::endl;
+			std::cin.sync();
+			continue ;
+		}
+		for (int i = 0; ((i < 5) && (flag == 0)); i++)
+		{
+			if (!std::isalpha(word[i]))
+			{
+				flag = 1;
+				break ;
+			}
+		}
+		if (flag == 1)
+		{
+			std::cerr << "Invalid word" << std::endl;
+			std::cin.sync();
+			continue ;
+		}
+		std::cin.sync();
+		break ;
+	}
+	database->capitalizer(word);
+	return (0);
 }
 
 void	Wordle::printColor(char c, int index, std::string word) {
