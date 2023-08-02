@@ -6,14 +6,14 @@
 #    By: emajuri <emajuri@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/10 12:50:22 by emajuri           #+#    #+#              #
-#    Updated: 2023/08/02 12:14:56 by emajuri          ###   ########.fr        #
+#    Updated: 2023/08/02 13:22:03 by emajuri          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 NAME = wordle
 
-SRC = 
+SRC = main.cpp Wordle.cpp
 
 OBJ = $(addprefix obj/,$(SRC:%.cpp=%.o))
 
