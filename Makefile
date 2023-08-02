@@ -6,14 +6,14 @@
 #    By: corellan <corellan@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/10 12:50:22 by emajuri           #+#    #+#              #
-#    Updated: 2023/08/02 13:30:52 by corellan         ###   ########.fr        #
+#    Updated: 2023/08/02 14:40:36 by corellan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 NAME = wordle
 
-SRC = main.cpp Database.cpp
+SRC = main.cpp Wordle.cpp Database.cpp
 
 OBJ = $(addprefix obj/,$(SRC:%.cpp=%.o))
 

@@ -6,15 +6,17 @@
 /*   By: corellan <corellan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 12:45:49 by corellan          #+#    #+#             */
-/*   Updated: 2023/08/02 14:33:34 by corellan         ###   ########.fr       */
+/*   Updated: 2023/08/02 14:42:40 by corellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Database.hpp"
+#include "Wordle.hpp"
 
 int	main()
 {
 	std::ifstream	file;
+	Wordle			wordle;
 	Database		database;
 
 	file.open("words.txt");
@@ -30,5 +32,6 @@ int	main()
 		std::cout << "ZORRO" << std::endl;
 	else
 		std::cout << "VOI VITTU!!" << std::endl;
+	wordle.start();
 	return (0);
 }
