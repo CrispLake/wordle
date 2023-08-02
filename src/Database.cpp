@@ -12,12 +12,12 @@
 
 #include "../inc/Database.hpp"
 
-Database::Database(void)
+Database::Database()
 {
 	return ;
 }
 
-Database::~Database(void)
+Database::~Database()
 {
 	return ;
 }
@@ -84,7 +84,7 @@ void	Database::_capitalizer(std::string &input)
 	return ;
 }
 
-std::string	Database::returnWord(void)
+std::string	Database::returnWord()
 {
 	std::random_device	rd;
 	std::uniform_int_distribution<size_t>	dist(0, _database.size());
@@ -92,7 +92,7 @@ std::string	Database::returnWord(void)
 	return (_database[dist(rd)]);
 }
 
-void	Database::printDatabase(void)
+void	Database::printDatabase()
 {
 	std::vector<std::string>::iterator	it;
 
