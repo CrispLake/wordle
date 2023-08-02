@@ -6,7 +6,7 @@
 /*   By: corellan <corellan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 12:28:40 by corellan          #+#    #+#             */
-/*   Updated: 2023/08/02 14:10:08 by corellan         ###   ########.fr       */
+/*   Updated: 2023/08/02 16:47:41 by corellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,9 @@ int	Database::storeDatabase(std::ifstream &file)
 			file.close();
 			return (-1);
 		}
-		_capitalizer(temp);
+		capitalizer(temp);
 		_database.push_back(temp);
+		file.sync();
 	}
 	if (file.eof() == true)
 	{
@@ -71,7 +72,7 @@ int	Database::_wordValidator(std::string const &input)
 	return (0);
 }
 
-void	Database::_capitalizer(std::string &input)
+void	Database::capitalizer(std::string &input)
 {
 	int	i;
 
