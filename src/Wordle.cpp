@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Wordle.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: corellan <corellan@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: emajuri <emajuri@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 13:03:18 by emajuri           #+#    #+#             */
-/*   Updated: 2023/08/02 17:22:40 by emajuri          ###   ########.fr       */
+/*   Updated: 2023/08/02 17:30:51 by emajuri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,7 @@ int	Wordle::getWord(std::string &word) {
 				break ;
 			}
 		}
+		database->capitalizer(word);
 		if ((flag == 1) || database->isInDatabase(word) == false)
 		{
 			std::cerr << "Invalid word" << std::endl;
@@ -93,7 +94,6 @@ int	Wordle::getWord(std::string &word) {
 		std::cin.sync();
 		break ;
 	}
-	database->capitalizer(word);
 	return (0);
 }
 
